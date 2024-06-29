@@ -4,7 +4,9 @@ This repository contains a LaTeX template for writing reports, specifically tail
 
 This template is designed based on references from various reports, and the cover page is created using Python libraries.
 
-<img src="asset/frontpage.png" alt="Demo" width="500">
+<p align="center">
+  <img src="asset/frontpage.png" alt="Demo" width="1000">
+</p>
 
 ## Repository Structure
 

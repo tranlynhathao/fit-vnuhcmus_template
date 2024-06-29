@@ -1,0 +1,78 @@
+\subsection{Selection Sort}
+
+\subsubsection{Core concept}
+Selection sort is comparison-based sorting algorithm. The algorithm repeatedly selects the smallest (or largest) element from the unsorted portion of the list and swaps it with the first element of the unsorted part. This process is repeated for the remaining unsorted portion until the entire list is sorted. ~\cite{ref6}
+
+\vspace{5pt}
+
+\subsubsection{Explanation}
+\textbf{One way to explain the algorithm:} ~\cite{ref7}
+\begin{itemize}
+    \item \textbf{Initialization:} Start with the first element in the list (index 0) as the current minimum.
+    \item \textbf{Find the Maximum:} Traverse the unsorted part of the list to find the maximum element.
+    \item \textbf{Swap:} Swap the found maximum element with the first element of the unsorted part.
+    \item \textbf{Move the Boundary:} Move the boundary between the sorted and unsorted parts one element to the left.
+    \item \textbf{Repeat:} Repeat for the next position in the list until the entire list is sorted.
+\end{itemize}
+
+\vspace{10pt}
+
+\textbf{Step-by-step:}
+\begin{itemize}[label=-]
+    \item Consider the following array as an example: { 29, 10, 14, 37, 13}
+
+    \item Beginning with five integers as unsorted part, you select the largest which is 37 and swap it with the last integer 13, then 37 is now in sorted part.
+
+    \item After first swap: {29, 10, 14, 13, 37}
+
+    \item Next you select the largest integer 29 from among the first four integers in the array and swap it with the next-to-last integer in the array 13. 29 is now the first element of sorted part.
+
+    \item After second swap: {13, 10, 14, 29, 37}
+
+    \item Notice that 14 is the largest element in unsorted part and it also is in the proper position in sorted part, but the algorithm ignores this fact and performs a swap of 14 with itself.
+
+    \item After third swap: {13, 10, 14, 29, 37}
+
+    \item Finally, select the 13 and swap it with the item in the second position of the array—10.
+
+    \item After fourth swap: {10, 13, 14, 29, 37}
+
+    \item The array is now sorted into ascending order.
+\end{itemize}
+
+\vspace{5pt}
+
+\subsubsection{Complexity analysis}
+
+\textbf{Time complexity:}
+At each iteration, the array is divided into two subarrays, the left part is sorted, and the right part is unsorted.
+
+\textbf{Iteration 1:} Perform $n - 1$ comparisons in $n$ numbers, choose the smallest element to move to $a[0]$
+
+\textbf{Iteration 2:} Perform $n - 2$ comparisons in $(n - 1)$ numbers, choose the smallest element to move to $a[1]$
+
+...
+
+\textbf{Iteration $n - 1$:} Perform 1 comparison in 2 numbers $a[n - 2]$ and $a[n - 1]$, choose the smallest element to move to $a[n - 1]$, then $a[n - 1]$ becomes the largest number, ending the algorithm.
+
+Let $f(n)$ be the cost function of the algorithm. We have:
+
+\[
+f(n) = (n - 1) + (n - 2) + \ldots + 3 + 2 + 1 = \frac{n(n - 1)}{2} \in O(n^2)
+\]
+\begin{itemize}
+    \item \textbf{Best Case:} $O(n^2)$ – Selection sort always performs $O(n^2)$ comparisons and swaps regardless of the initial order of the elements.
+    \item \textbf{Average Case:} $O(n^2)$ – Same as the best case, selection sort does not change its behavior based on the input data.
+    \item \textbf{Worst Case:} $O(n^2)$ – Selection sort performs $O(n^2)$ comparisons and swaps in all cases.
+\end{itemize}
+
+\textbf{Space complexity:}
+\begin{itemize}
+    \item $O(1)$ – Selection sort is an in-place sorting algorithm, meaning it requires only a constant amount of additional memory space.
+\end{itemize}
+
+\subsubsection{Variants and optimizations}
+
+An optimized variant is heap sort which we will discuss it later. This sorting algorithm is an improvement of selection sort. Heap sort reduces the time to find the smallest or largest element in unsorted part by building a max heap or min heap. Heap is a data structure which is used to find the minimum (min heap) or maximum (max heap) element more efficiently. This reduces the time complexity to $O(n\log n)$.
+
+\vspace{10pt}

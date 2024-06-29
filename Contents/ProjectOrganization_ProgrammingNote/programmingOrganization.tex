@@ -1,0 +1,32 @@
+\subsection{Project organization}
+\begin{enumerate}
+    \item Header files
+    \begin{itemize}[label=-]
+        \item SortWithTime.h: This file contains the declaration of all original sorting algorithms which are used to measure the time of each algorithm.
+        \item SortWithComapre.h: This file contains the declaration of all sorting algorithms which are used to counting the number of comparisons of each algorithm.
+        \item CommandLine.h: This file contains the declarations of below things:
+        \begin{itemize}
+            \item Declare all commands  which can be used when executing the file exe
+            \item Declare necessary functions to run the commands.
+        \end{itemize}
+
+        \item DataGenerator.h: This file contains the below things:
+        \begin{itemize}
+            \item Declare the functions to generate data in different orders and different sizes.
+            \item Declare the functions to read files to get data and write data into files.
+            \item Declare the function to duplicate an array.
+            \item Declare the functions to measure the time and counting the comparison of given algorithm.
+            \item The given template and given function for the template.
+        \end{itemize}
+        \item Lib.h: This file contains all the necessary libraries.
+    \end{itemize}
+    \item .cpp files
+    \begin{itemize}[label=-]
+        \item The cpp files in folder contains all definitions of the functions that are declared in the header files. "main.cpp" contains the \texttt{main()} function.
+    \end{itemize}
+    \item Generative Text files
+    \begin{itemize}[label=-]
+        \item There are 5 input text files and 1 output text files which is created when running the commands. 
+    \end{itemize}
+\end{enumerate}
+\textbf{NOTE:} Using these text files is optional, and alternatively, you can create new files in this format.

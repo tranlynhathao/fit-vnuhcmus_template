@@ -1,0 +1,73 @@
+\subsection{Binary Insertion Sort}
+
+\subsubsection{Core concept}
+Binary Insertion sort is a variation of insertion sort. the core idea is similar to insertion sort, but instead of using linear search to find the position where an element should be inserted, this algorithm uses binary search. Thus, it reduce the comparative value of inserting a single element. ~\cite{ref8}
+
+\subsubsection{Explanation}
+The algorithm is similar to insertion sort algorithm, but here we use binary search to find the position:
+\begin{itemize}[label=-]
+    \item \textbf{Initialization:} Start with the second element (index 1) of the array, as the first element is considered sorted.
+    \item \textbf{Binary Search for Position:} Use binary search to determine the correct position in the sorted portion of the array for the current element.
+    \item \textbf{Shift Elements:} Shift elements to the right to make room for the current element.
+    \item \textbf{Insert Element:} Insert the current element into its correct position.
+    \item \textbf{Repeat:} Repeat the process for each element in the array until the entire array is sorted
+\end{itemize}
+
+\textbf{Step-by-step:}
+\begin{itemize}[label=-]
+    \item Lets use the array as an example {29, 10, 14, 37, 13}
+
+    \item Consider 29 is in sorted part, start from 10, we use binary search to find the position in sorted part to insert 10. 10 smaller than 29 so the position is 0. Then we shift and insert 10.
+
+    \item After first insertion {10, 29, 14, 37, 13}
+
+    \item Continue to find the location for 14 which is between 10 and 29. We shift and insert 14 to the correct position.
+
+    \item After second insertion {10, 14, 29, 37, 13}
+
+    \item We continue to the same technique for 37 and 13. Finally, we get a sorted list
+
+    \item After third and fourth insertions {10, 13, 14, 29, 37}
+\end{itemize}
+
+
+\subsubsection{Complexity analysis}
+
+\textbf{Time complexity:}
+Consider the array $a[]$ sorted in increasing order.
+
+\textbf{Iteration 1:} requires 1 comparison
+
+\textbf{Iteration 2:} requires $\log 2 + 1$ comparisons
+
+...
+
+\textbf{Iteration $n - 1$:} requires $\log(n - 1) + 1$ comparisons
+
+In all iterations, since the array is already sorted in increasing order, the elements do not need to be moved.
+
+\[
+f(n) = 1 + \log 2 + 1 + \log 3 + 1 + \ldots + \log(n - 1) + 1 = n - 1 + \sum_{i=2}^{n-1} \log i
+\]
+
+Consider \(\displaystyle \sum_{i=2}^{n-1} \log i \approx \sum_{i=1}^{n} \log i \), then:
+
+\[
+\sum_{i=n/2}^{n} \log \frac{n}{2} \leq \sum_{i=1}^{n} \log i \leq \sum_{i=1}^{n} \log n \Rightarrow \frac{n}{2} \log \frac{n}{2} \leq f(n) \leq n \log n
+\]
+
+Thus, $f(n) \in \Omega(n \log n)$ and $f(n) \in O(n \log n)$, therefore $f(n) \in \Theta(n \log n)$.
+
+Therefore, if we only apply simple binary search, in the best case, the complexity of BinaryInsertionSort is $O(n \log n)$. This can be improved by comparing $a[i]$ and $a[i-1]$ first when performing the binary search, which can reduce it to $O(n)$.
+\begin{itemize}
+    \item Best Case: $O(n log n)$ – Binary search reduces the number of comparisons, but shifting elements still takes linear time.
+    \item Average Case: $O(n^2)$ – Despite using binary search, the time complexity remains quadratic due to the shifting of elements.
+    \item Worst Case: $O(n^2$) – Similar to the average case, the need to shift elements results in quadratic time complexity.
+\end{itemize}
+
+\textbf{Space complexity:} \textbf{O(1)} - binary insertion sort is similar to insertion sort.  It is an in-place sorting algorithm, meaning it requires only a constant amount of additional memory space.
+
+\subsubsection{Variants and optimizations}
+Tim Sort is a hybrid sorting algorithm derived from merge sort and insertion sort. It was designed to perform well on many kinds of real-world data. ~\cite{ref11}
+
+\vspace{10pt}

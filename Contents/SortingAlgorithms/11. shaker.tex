@@ -1,0 +1,58 @@
+\subsection{Shaker Sort}
+
+\subsubsection{Core concept}
+Shaker sort, also known as cocktail sort or bidirectional bubble sort, is a variation of bubble sort that sorts the array in both directions on each pass through the list. This means it traverses the array from left to right and then from right to left, ensuring that the largest elements "bubble" to the end and the smallest elements "bubble" to the beginning of the array.
+
+\subsubsection{Explanation}
+
+The algorithm is broken up into 2 stages: ~\cite{ref12}
+\begin{itemize}[label=-]
+    \item The first stage loops through the array from left to right, just like the Bubble Sort. During the loop, adjacent items are compared and if the value on the left is greater than the value on the right, then values are swapped. At the end of the first iteration, the largest number will reside at the end of the array.
+    \item The second stage loops through the array in opposite direction- starting from the item just before the most recently sorted item, and moving back to the start of the array. Here also, adjacent items are compared and are swapped if required.
+\end{itemize}
+
+\vspace{5pt}
+
+\textbf{Example for the first pass} ~\cite{ref12}
+
+Let us consider an example array: (5 1 4 2 8 0 2)
+
+\textbf{First Forward Pass:}
+
+\begin{lstlisting}[mathescape=true]
+(5 1 4 2 8 0 2) $\rightarrow$ (1 5 4 2 8 0 2), Swap since 5 > 1
+(1 5 4 2 8 0 2) $\rightarrow$ (1 4 5 2 8 0 2), Swap since 5 > 4
+(1 4 5 2 8 0 2) $\rightarrow$ (1 4 2 5 8 0 2), Swap since 5 > 2
+(1 4 2 5 8 0 2) $\rightarrow$ (1 4 2 5 8 0 2)
+(1 4 2 5 8 0 2) $\rightarrow$ (1 4 2 5 0 8 2), Swap since 8 > 0
+(1 4 2 5 0 8 2) $\rightarrow$ (1 4 2 5 0 2 8), Swap since 8 > 2
+\end{lstlisting}
+
+After the first forward pass, the greatest element of the array will be present at the last index of the array.
+
+\vspace{10pt}
+
+\textbf{First Backward Pass:}
+
+\begin{lstlisting}[mathescape=true]
+(1 4 2 5 0 2 8) $\rightarrow$ (1 4 2 5 0 2 8)
+(1 4 2 5 0 2 8) $\rightarrow$ (1 4 2 0 5 2 8), Swap since 5 > 0
+(1 4 2 0 5 2 8) $\rightarrow$ (1 4 0 2 5 2 8), Swap since 2 > 0
+(1 4 0 2 5 2 8) $\rightarrow$ (1 0 4 2 5 2 8), Swap since 4 > 0
+(1 0 4 2 5 2 8) $\rightarrow$ (0 1 4 2 5 2 8), Swap since 1 > 0
+\end{lstlisting}
+
+After the first backward pass, the smallest element of the array will be present at the first index of the array.
+
+\subsubsection{Complexity analysis}
+
+\textbf{Time complexity:}
+\begin{itemize}
+    \item Best Case: $O(n)$ – This occurs when the array is already sorted. Only one full pass through the array is needed.
+    \item Average Case: $O(n^2)$ – Each element needs to be compared with many other elements in the array.
+    \item Worst Case: $O(n^2)$ – Similar to the average case, the worst-case scenario involves multiple passes through the array with numerous swaps.
+\end{itemize}
+
+\textbf{Space complexity:} $O(1)$ – Shaker sort is an in-place sorting algorithm, meaning it requires only a constant amount of additional memory space.
+
+\vspace{10pt}

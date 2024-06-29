@@ -1,0 +1,163 @@
+% Add your group number
+\newcommand\groupnumber{
+\textbf{Group 07}
+}
+
+% Insert authors and student numbers here
+\newcommand\reportauthors{
+\\
+Tran Ly Nhat Hao & 23127187 \\
+Pham Thanh Dat & 23127170 \\
+Huynh Hao Nam & 23127431 \\
+}
+
+% Add the name of your tutor
+% \newcommand\grouptutor{
+% Tutor: Name Surname
+% }
+
+% Date and location
+\newcommand\placeanddate{
+Ho Chi Minh City, \today
+}
+
+% Define Tue-red
+\definecolor{Tue-red}{RGB}{199, 25, 24}
+
+% Sets up hyperlinks in the document to be colored
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=magenta,
+    citecolor = Tue-red
+}
+% \urlstyle{same} % Defines settings for link and reference formatting
+
+
+% Change bullet style for level 1, 2 and 3 respectively for itemize
+% \renewcommand{\labelitemi}{\scriptsize\textcolor{Tue-red}{$\blacksquare$}}% level 1
+% \renewcommand{\labelitemii}{\scriptsize\textcolor{Tue-red}{$\square$}}% level 2
+% \renewcommand{\labelitemiii}{\textcolor{Tue-red}{$\circ$}}% level 3
+
+% \renewcommand{\labelitemi}{\small\textcolor{Tue-red}{\ding{70}}} % level 1
+% \renewcommand{\labelitemii}{\small\textcolor{Tue-red}{\ding{71}}}% level 2
+% \renewcommand{\labelitemiii}{\tiny\textcolor{Tue-red}{\ding{71}}}% level 3
+
+% % Change bullet style for level 1, 2 and 3 respectively for enumerate
+% \renewcommand{\labelenumi}{\textbf{\textcolor{Tue-red}{\arabic*.}}}% level 1
+% \renewcommand{\labelenumii}{\textbf{\textcolor{Tue-red}{[\alph*]}}}% level 2
+% \renewcommand{\labelenumiii}{\textbf{\textcolor{Tue-red}{\roman*.}}}% level 3
+
+% Creates a beautiful header/footer
+% \lhead{\includegraphics[height = 20pt]{Figures/0. General/us-giraldillo.png}}
+% \rhead{\reporttitle}
+% \renewcommand{\footrulewidth}{0.4pt}
+% \cfoot{Page \thepage}
+
+
+% Formats section, subsection and subsubsection titles respectively 
+% \titleformat{\section}{\sffamily\color{Tue-red}\Large\bfseries}{\thesection\enskip\color{gray}\textbar\enskip}{0cm}{} % Formats section titles
+
+% \titleformat{\subsection}{\sffamily\color{Tue-red}\large\bfseries}{\thesubsection\enskip\color{gray}\textbar\enskip}{0cm}{} % Formats subsection titles
+
+% \titleformat{\subsubsection}{\sffamily\color{Tue-red}\bfseries}{\thesubsubsection\enskip\color{gray}\textbar\enskip}{0cm}{} % Formats subsubsection titles
+
+% Formats captions
+% \DeclareCaptionFont{Tue-red}{\color{Tue-red}}
+% \captionsetup{labelfont={Tue-red,bf}}
+
+\titleformat{\subsection}
+{\normalfont\Large\bfseries}{\thesubsection}{1em}{}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\counterwithin{figure}{section}  % Number figures by section
+\counterwithin{table}{section}   % Number tables by section
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}  % Format figure numbering
+\renewcommand{\thetable}{\thesection.\arabic{table}}    % Format table numbering
+\renewcommand{\refname}{\Large References}
+\renewcommand{\labelitemi}{$\bullet$}
+
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstdefinestyle{pythonstyle}{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    commentstyle=\color{green!40!black},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    stepnumber=1,
+    frame=single,
+    breaklines=true,
+    breakatwhitespace=false,
+    tabsize=4,
+    showstringspaces=false,
+    captionpos=b,
+    morekeywords={True, False},
+}
+
+\lstset{style=mystyle}
+
+% Disable indentation on new paragraphs
+\setlength{\parindent}{0pt}
+
+\newcommand{\coursename}{Data Structures and Algorithms}
+\newcommand{\reportname}{Algorithm survey and evaluation}
+\newcommand{\reporttitle}{Sorting Algorithms}
+
+% \newcommand{\studentname}{ \\ }
+\newcommand{\teachername}{%
+  \makebox[4.0cm][l]{MSc. Phan Thi Phuong Uyen}%
+  \\
+  \makebox[4.0cm][l]{TA. Tran Hoang Quan}%
+}
+\newcommand{\leftfooter}{\LaTeX\ by \href{https://github.com/tranlynhathao}{tranlynhathao}}
+
+
+% ============ HEADER AND FOOTER ============
+% Header length
+\setlength{\headheight}{29.43912pt}
+
+% Footer page number would be on the lower-right corner
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{1pt}
+
+\lhead{\protect\reporttitle}
+
+\rhead{
+University of Science - VNU HCMC\\
+\coursename
+}
+\lfoot{\leftfooter}

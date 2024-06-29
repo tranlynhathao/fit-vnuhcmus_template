@@ -1,0 +1,82 @@
+\subsection{Heap Sort}
+
+\subsubsection{Core concept}
+Heap sort, as we have mentioned before, is an improvement of selection sort. It is comparison-based sorting technique based on heap data structure. We use heap to find the minimum element and place the minimum element at the beginning. Repeat the same process for the remaining elements.
+
+\subsubsection{Explanation}
+Heap definition (array-based representation) ~\cite{ref1}
+
+\vspace{5pt}
+
+Heap is a collection of $n$ elements ($a_0, a_1, \ldots, a_{n-1}$) in which every element (at position $i$) in the first half is greater than or equal to the elements at position $2i+1$ and $2i+2$.
+
+\[
+\text{for every } i \ (0 \leq i \leq n/2 - 1)
+\]
+
+\[
+a_i \geq a_{2i + 1}
+\]
+
+\[
+a_i \geq a_{2i + 2}
+\]
+
+Heap in above definition is called max-heap. (We also have min-heap structure)
+
+\vspace{5pt}
+
+Heap will reduce the time to find the minimum or maximum element when sorting the array which is an improvement of selection sort.
+
+\textbf{Main steps:}
+\begin{itemize}
+    \item \textbf{Build a (max or min) Heap}: Convert the input array into a heap.
+    \item \textbf{Heapify}: Rearrange the heap to maintain the max-heap property.
+    \item \textbf{Extract Max Element}: Swap the first element (maximum) with the last element and reduce the heap size by one. Heapify the root to maintain the max-heap property.
+    \item \textbf{Repeat}: Repeat the extraction process until the heap is empty.
+\end{itemize}
+
+The most important step is build a heap. Here is pseudo code for one way to build a max-heap. ~\cite{ref1}
+
+
+\begin{algorithm}
+\caption{Heap Construct}
+\begin{verbatim}
+1. Initialize index = floor(n/2) - 1
+2. While index >= 0
+     a. Call heapRebuild(index, a, n)
+     b. index = index - 1
+\end{verbatim}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Heap Rebuild}
+\begin{verbatim}
+1. Initialize k = pos, v = a[k], isHeap = false
+2. While not isHeap and 2k + 1 < n
+     a. j = 2k + 1
+     b. If j < n - 1
+          i. If a[j] < a[j + 1]
+               A. j = j + 1
+     c. If a[k] >= a[j]
+          i. isHeap = true
+       else
+          i. Swap a[k] and a[j]
+          ii. k = j
+\end{verbatim}
+\end{algorithm}
+
+\subsubsection{Complexity analysis}
+
+\textbf{Time complexity:}
+\begin{itemize}[label=-]
+    \item Build max heap takes O(n) time and each of the n extraction takes O(log2 n)
+    \item $O(n log_2 n)$ for all case
+\end{itemize}
+
+\textbf{Space complexity:} $O(1)$, if we don’t consider the recursive stack space. If we consider the recursive stack space then, in the worst case Heap sort could make $O(n)$.
+
+\subsubsection{Variants and optimizations} 
+Optimizing the heapify process can improve performance. For example, bottom-up heap construction can be more efficient than top-down heap construction.
+
+\vspace{10pt}

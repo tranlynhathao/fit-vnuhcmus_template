@@ -1,0 +1,23 @@
+\subsection{Programming note}
+Chrono library: use for measuring running time of sorting functions
+\begin{itemize}[label=-]
+    \item \texttt{<chrono>} is a \texttt{C++} header that provides a collection of types and functions to work with time. It is a part of the \texttt{C++} Standard Template Library (STL) and it’s included in \texttt{C++11} and later versions. ~\cite{ref13}
+    \item \texttt{<chrono>} provides three main types of clocks: 
+        \begin{itemize}[label=$\bullet$]
+            \item \texttt{system\_clock}, \texttt{steady\_clock}, and \texttt{high\_resolution\_clock}. 
+            
+            \item These clocks are used to measure time in various ways. ~\cite{ref13}
+        \end{itemize}
+    \item Here is a pseudocode:
+        \begin{itemize}[label=$\bullet$]
+            \item \texttt{start\_time = get\_current\_high\_resolution\_time()} (record the current time)
+            
+            \item \texttt{runSortingAlgorithmWithTime(a, n, algoIndex)} (calling function)
+            
+            \item \texttt{end\_time = get\_current\_high\_resolution\_time()} (record the current time)
+            
+            \item \texttt{duration = end\_time - start\_time} (calculate the duration in milliseconds)
+            
+            \item \texttt{time = convert\_to\_milliseconds(duration)} (convert duration to milliseconds)
+        \end{itemize}
+\end{itemize}

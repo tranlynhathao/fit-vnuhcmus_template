@@ -1,0 +1,73 @@
+\documentclass[a4paper]{article}
+\input{General/Preamble} % Loads in the preamble 
+\input{General/Settings} % Loads in user defined settings
+
+% ============ DOCUMENT ============
+\begin{document}
+\pagenumbering{arabic}
+\setcounter{page}{1} 
+% Inserts the front page
+\input{Contents/0. Frontpage}
+\newpage
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+\phantomsection
+\listoffigures
+\newpage
+
+% \input{Contents/0. Student_info}
+% \newpage
+
+% \input{Contents/0. introduction}
+% \newpage
+
+% % content
+% \section{Sorting Algorithms}
+% \input{Contents/SortingAlgorithms/1. selection}
+% \input{Contents/SortingAlgorithms/2. insertion}
+% \input{Contents/SortingAlgorithms/3. shell}
+% \input{Contents/SortingAlgorithms/4. bubble}
+% \input{Contents/SortingAlgorithms/5. heap}
+% \input{Contents/SortingAlgorithms/6. merge}
+% \input{Contents/SortingAlgorithms/7. quick}
+% \input{Contents/SortingAlgorithms/8. radix}
+% \input{Contents/SortingAlgorithms/9. counting}
+% \input{Contents/SortingAlgorithms/10. b_insertion}
+% \input{Contents/SortingAlgorithms/11. shaker}
+% \input{Contents/SortingAlgorithms/12. flash}
+% \newpage
+
+% \section{Survey and Evaluation}
+% \input{Contents/Survey_Evaluation/RandomOrder}
+% \input{Contents/Survey_Evaluation/SortedOrder}
+% \input{Contents/Survey_Evaluation/ReverseOrder}
+% \input{Contents/Survey_Evaluation/NearlySortedOrder}
+% \newpage
+
+% \section{Project Organization and Programming Note}
+% All source codes are located in "SOURCE" folder.
+% \input{Contents/ProjectOrganization_ProgrammingNote/programmingOrganization}
+% \input{Contents/ProjectOrganization_ProgrammingNote/programmingNote}
+% \newpage
+
+% \section{How to compile}
+% \input{Contents/How_to_compile/compile}
+% \newpage
+
+% References
+% \input{ref/References}
+\cleardoublepage
+\phantomsection
+\bibliographystyle{unsrt}
+\bibliography{ref/References}
+\newpage
+
+% % Appendix
+% \appendix
+% \input{Appendix/appendix}
+% \newpage
+
+\end{document}

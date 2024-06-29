@@ -1,0 +1,27 @@
+\subsection{Counting Sort}
+
+\subsubsection{Core Concepts}
+Counting sort is an efficient algorithm for sorting integers. It works by counting the number of occurrences of each distinct value in the input array using a separate count array. These counts are then used to place the elements back into the original array in sorted order, ranging from the smallest to the largest value. This method ensures that the array is sorted correctly and efficiently. ~\cite{ref3}
+\subsubsection{Step-by-step Explanations}
+\begin{itemize}[label=-]
+    \item Step 1: find max value of the array
+    \item Step 2: create an array with max value of elements to count appearances
+    \item Step 3: iterate through the original array a. For each element in a, increment the corresponding index in the count array b. This effectively counts the occurrences of each element.
+    \item Step 4: assign the value back to original array
+\end{itemize}
+
+\subsubsection{Complexity Analysis}
+\textbf{Time Complexity:}
+\begin{itemize}
+    \item Best-case: $O(n + k)$
+    \item Average-case: $O(n + k)$
+    \item Worst-case: $O(n + k)$
+    \item where n is the number of elements in the array, and k is the range of the input.
+\end{itemize}
+
+\textbf{Space Complexity:} $O(n + k)$ because it requires additional space for the count array and the output array.
+
+\subsubsection{Variants and Optimizations}
+\textbf{Negative number:} if there are negative numbers in input array and there is no negative index so we can plus to all elements of the array by the smallest value to make sure that smallest is 0 then running counting and the final sorted array, we minus all elements by the value that we plus in first step.
+
+\vspace{10pt}

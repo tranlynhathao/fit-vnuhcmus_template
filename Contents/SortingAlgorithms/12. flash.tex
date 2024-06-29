@@ -1,0 +1,22 @@
+\subsection{Flash Sort}
+
+\subsubsection{Core Concepts}
+Flash sort is sorting that divide elements in to different buckets which the gap of value is smallest and make sure that the largest value in previous bucket is smaller that lowest value in next bucket. Then we use basic sorting algorithms to sort buckets, often use insertion sort because it work well with nearly sorted array. ~\cite{ref4}
+
+\subsubsection{Step-by-step Explanations}
+First, calculate the number of buckets by multiplying the size of the input array by 0.45. Then, create an array to count the number of elements in each bucket. Iterate through the input array, assigning each element to the appropriate bucket. Next, adjust the bucket counts to reflect the final positions of elements. Reorder the elements so each bucket contains the correct values. Finally, apply insertion sort within each bucket to sort the elements, resulting in a fully sorted array.
+
+\subsubsection{Complexity Analysis}
+\textbf{Time Complexity:}
+\begin{itemize}
+    \item Best-case: $O(n)$
+    \item Average-case: $O(n + k)$
+    \item Worst-case: $O(n + k)$
+    \item Where n is the number of elements, and k is the number of buckets.
+\end{itemize}
+
+\textbf{Space Complexity:} $O(n + k)$ because it requires additional space for the count array and the class boundaries.
+
+\subsubsection{Variants and Optimizations}
+There are different way to count the number of buckets based on the different data so just test and find suitable buckets to improve performance, sometimes number of buckets equal to $0.45 * n or 0.42 * n or k * n$. We can use quick-sort instead of insertion-sort if the array is larger. 
+

@@ -128,10 +128,8 @@ This template is designed based on references from various reports, and the cove
 
 Feel free to contribute to this template by submitting pull requests or opening issues for any bugs or enhancements.
 
-## License
-
-This template is licensed under the MIT License. See the `LICENSE` file for more details.
-
 ---
 
-This README should provide a comprehensive introduction to your LaTeX report template and guide users on how to use and compile it.
+## License
+
+This template is licensed under the MIT License. See the [MIT LICENSE](LICENSE) file for more details.
